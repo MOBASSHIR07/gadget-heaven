@@ -10,18 +10,47 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import MainLayout from './Layouts/MainLayout.jsx';
+import AllProducts from './components/AllProducts.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<MainLayout />,
+    element: <MainLayout />,
     children: [
       {
-        index: true,
+        index: "/",
         element: <Home />,
+        children: [
+          {
+            index: true,
+            loader: () => fetch('/fakeData.json'),
+            element: <AllProducts />,
+          },
+          {
+            path: "category/allproducts",
+            loader: () => fetch('/fakeData.json'),
+            element: <AllProducts />,
+          },
+          {
+            path: "category/:categoryName",
+            loader: async ({ params }) => {
+              const res = await fetch('/fakeData.json');
+              const data = await res.json();
+              const filtered = data.filter(product =>
+                product.category.toLowerCase() === params.categoryName.toLowerCase()
+              );
+              return filtered;
+            },
+            element: <AllProducts />,
+          },
+        
+
+        ],
       },
-     
-    
+
+
+
+
     ],
     errorElement: <div>Oops! Something went wrong.</div>,
   },

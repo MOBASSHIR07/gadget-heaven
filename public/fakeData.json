@@ -1,0 +1,287 @@
+[
+  {
+    "product_id": "P001",
+    "product_title": "Apple iPhone 15 Pro Max",
+    "product_image": "https://images.unsplash.com/photo-1678911820864-e2c567c655d7?w=600&auto=format",
+    "category": "iPhone",
+    "price": 1299,
+    "description": "Experience the ultimate smartphone with the iPhone 15 Pro Max featuring titanium design and powerful camera system.",
+    "specification": [
+      "6.7-inch Super Retina XDR display",
+      "A17 Bionic chip",
+      "Triple-camera system (48MP Main, 12MP Telephoto, 12MP Ultrawide)",
+      "Titanium design",
+      "Up to 2TB storage"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Apple",
+    "colors": ["Space Black", "White", "Gold"]
+  },
+  {
+    "product_id": "P002",
+    "product_title": "Samsung Galaxy S23 Ultra",
+    "product_image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&auto=format",
+    "category": "Phones",
+    "price": 1199,
+    "description": "Professional-grade camera in your pocket with the S Pen included.",
+    "specification": [
+      "6.8-inch Dynamic AMOLED 2X",
+      "Snapdragon 8 Gen 2",
+      "200MP main camera",
+      "S Pen included",
+      "5000mAh battery"
+    ],
+    "availability": true,
+    "rating": 4.7,
+    "brand": "Samsung",
+    "colors": ["Phantom Black", "Green", "Lavender"]
+  },
+  {
+    "product_id": "P003",
+    "product_title": "MacBook Pro 16\" M2 Max",
+    "product_image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&auto=format",
+    "category": "MacBook",
+    "price": 2499,
+    "description": "Supercharged for pros with the M2 Max chip and stunning Liquid Retina XDR display.",
+    "specification": [
+      "16.2-inch Liquid Retina XDR display",
+      "M2 Max chip (12-core CPU, 38-core GPU)",
+      "32GB unified memory",
+      "1TB SSD storage",
+      "Up to 22 hours battery life"
+    ],
+    "availability": true,
+    "rating": 4.9,
+    "brand": "Apple",
+    "ports": ["Thunderbolt 4", "HDMI", "SDXC"]
+  },
+  {
+    "product_id": "P004",
+    "product_title": "Dell XPS 15",
+    "product_image": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&auto=format",
+    "category": "Laptops",
+    "price": 1799,
+    "description": "InfinityEdge display with ultra-thin bezels for maximum screen space.",
+    "specification": [
+      "15.6-inch 4K UHD+ touch display",
+      "Intel Core i9-13900H",
+      "NVIDIA RTX 4070",
+      "32GB DDR5 RAM",
+      "1TB NVMe SSD"
+    ],
+    "availability": true,
+    "rating": 4.6,
+    "brand": "Dell",
+    "weight": "4.2 lbs"
+  },
+  {
+    "product_id": "P005",
+    "product_title": "Apple Watch Series 9",
+    "product_image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600&auto=format",
+    "category": "Smart Watches",
+    "price": 399,
+    "description": "The most advanced Apple Watch with new S9 chip and brighter display.",
+    "specification": [
+      "45mm or 41mm case sizes",
+      "Retina Always-On display",
+      "Blood oxygen sensor",
+      "ECG app",
+      "Water resistant 50m"
+    ],
+    "availability": true,
+    "rating": 4.7,
+    "brand": "Apple",
+    "strap_options": ["Sport Band", "Milanese Loop", "Leather Link"]
+  },
+  {
+    "product_id": "P006",
+    "product_title": "Sony WH-1000XM5 Headphones",
+    "product_image": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600&auto=format",
+    "category": "Accessories",
+    "price": 349,
+    "description": "Industry-leading noise cancellation with 30-hour battery life.",
+    "specification": [
+      "Industry-leading noise cancellation",
+      "30-hour battery life",
+      "Touch controls",
+      "Built-in Alexa",
+      "Lightweight design (250g)"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Sony",
+    "noise_cancellation": true
+  },
+  {
+    "product_id": "P007",
+    "product_title": "Samsung Galaxy Watch 6",
+    "product_image": "https://images.samsung.com/is/image/samsung/p6pim/levant/feature/164303426/levant-feature-galaxy-watch6-classic-471130601?$650_519_PNG$",
+    "category": "Smart Watches",
+    "price": 299,
+    "description": "Advanced health tracking with sleek design and improved battery life.",
+    "specification": [
+      "1.5-inch Super AMOLED display",
+      "Exynos W930 processor",
+      "Advanced sleep coaching",
+      "Body composition analysis",
+      "40mm and 44mm options"
+    ],
+    "availability": true,
+    "rating": 4.5,
+    "brand": "Samsung",
+    "colors": ["Graphite", "Silver", "Gold"]
+  },
+  {
+    "product_id": "P008",
+    "product_title": "Logitech MX Master 3S",
+    "product_image": "https://images.unsplash.com/photo-1605773527852-c546a8584ea3?w=600&auto=format",
+    "category": "Accessories",
+    "price": 99,
+    "description": "Advanced wireless mouse designed for creatives and professionals.",
+    "specification": [
+      "8000 DPI sensor",
+      "Quiet clicks",
+      "MagSpeed scrolling",
+      "Multi-device pairing",
+      "70-day battery life"
+    ],
+    "availability": true,
+    "rating": 4.9,
+    "brand": "Logitech",
+    "compatibility": ["Windows", "macOS", "Linux"]
+  },
+  {
+    "product_id": "P009",
+    "product_title": "MacBook Air M2",
+    "product_image": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format",
+    "category": "MacBook",
+    "price": 1199,
+    "description": "Incredibly thin and light with the powerful M2 chip and all-day battery life.",
+    "specification": [
+      "13.6-inch Liquid Retina display",
+      "M2 chip (8-core CPU, 10-core GPU)",
+      "16GB unified memory",
+      "512GB SSD storage",
+      "MagSafe charging"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Apple",
+    "weight": "2.7 lbs"
+  },
+  {
+    "product_id": "P010",
+    "product_title": "Google Pixel 8 Pro",
+    "product_image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&auto=format",
+    "category": "Phones",
+    "price": 999,
+    "description": "Best Google camera experience with AI-enhanced features and premium design.",
+    "specification": [
+      "6.7-inch Super Actua display",
+      "Google Tensor G3",
+      "50MP triple camera system",
+      "Temperature sensor",
+      "7 years of OS updates"
+    ],
+    "availability": true,
+    "rating": 4.6,
+    "brand": "Google",
+    "colors": ["Obsidian", "Porcelain", "Bay"]
+  },
+  {
+    "product_id": "P011",
+    "product_title": "Bose QuietComfort Ultra Headphones",
+    "product_image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format",
+    "category": "Accessories",
+    "price": 429,
+    "description": "Premium noise cancelling headphones with spatial audio and immersive sound.",
+    "specification": [
+      "World-class noise cancellation",
+      "Spatial audio",
+      "24-hour battery life",
+      "Aware Mode with conversation detection",
+      "Multi-point connection"
+    ],
+    "availability": true,
+    "rating": 4.7,
+    "brand": "Bose",
+    "colors": ["Black", "White Smoke", "Sandstone"]
+  },
+  {
+    "product_id": "P012",
+    "product_title": "ASUS ROG Zephyrus G14",
+    "product_image": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&auto=format",
+    "category": "laptops",
+    "price": 1649,
+    "description": "Powerful gaming laptop in an ultra-portable 14-inch design.",
+    "specification": [
+      "14-inch QHD 165Hz display",
+      "AMD Ryzen 9 7940HS",
+      "NVIDIA RTX 4070",
+      "32GB DDR5 RAM",
+      "1TB PCIe 4.0 SSD"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "ASUS",
+    "weight": "3.64 lbs"
+  },
+  {
+    "product_id": "P013",
+    "product_title": "Apple iPhone 14",
+    "product_image": "https://images.unsplash.com/photo-1678911820864-e2c567c655d7?w=600&auto=format",
+    "category": "iPhone",
+    "price": 799,
+    "description": "A total powerhouse with a beautiful design, incredible cameras and all-day battery life.",
+    "specification": [
+      "6.1-inch Super Retina XDR display",
+      "A15 Bionic chip",
+      "Dual camera system (12MP Wide, 12MP Ultra Wide)",
+      "Emergency SOS via satellite",
+      "Face ID"
+    ],
+    "availability": true,
+    "rating": 4.7,
+    "brand": "Apple",
+    "colors": ["Midnight", "Starlight", "Blue", "Purple", "Red"]
+  },
+  {
+    "product_id": "P014",
+    "product_title": "Anker 735 Charger",
+    "product_image": "https://images.unsplash.com/photo-1623126908029-58cb08a2b272?w=600&auto=format",
+    "category": "Accessories",
+    "price": 59,
+    "description": "65W GaN charger with 3 ports for simultaneously charging multiple devices.",
+    "specification": [
+      "65W total output",
+      "2 USB-C ports",
+      "1 USB-A port",
+      "GaN II technology",
+      "Foldable plugs"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Anker",
+    "weight": "0.35 lbs"
+  },
+  {
+    "product_id": "P015",
+    "product_title": "LG Gram 17",
+    "product_image": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&auto=format",
+    "category": "Laptops",
+    "price": 1499,
+    "description": "Ultra-lightweight 17-inch laptop with amazing battery life and powerful performance.",
+    "specification": [
+      "17-inch WQXGA IPS display",
+      "Intel Core i7-1360P",
+      "16GB LPDDR5 RAM",
+      "1TB NVMe SSD",
+      "Up to 18 hours battery life"
+    ],
+    "availability": true,
+    "rating": 4.7,
+    "brand": "LG",
+    "weight": "2.98 lbs"
+  }
+]
