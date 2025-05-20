@@ -3,7 +3,7 @@ import img from '../assets/banner.jpg';
 
 const HeroBanner = () => {
   return (
-    <div className="relative bg-purple-700 text-white pt-20 pb-60 rounded-b-2xl">
+    <div className="relative bg-purple-700 text-white pt-20 pb-60 rounded-b-2xl ">
       {/* Content Area */}
       <div className="max-w-6xl mx-auto px-4 text-center mb-8">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">

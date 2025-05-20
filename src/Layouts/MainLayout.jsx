@@ -8,12 +8,12 @@ const MainLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
       
-      <header className="w-full bg-purple-700">
-        <div className="w-11/12 mx-auto">
+      
+        <div className="w-11/12 mx-auto my-4 rounded-xl">
           <Nav />
           <HeroBanner />
         </div>
-      </header>
+      
 
      <main className="flex-grow w-11/12 mx-auto pt-64 md:pt-72 mb-8"> 
         <Outlet />
