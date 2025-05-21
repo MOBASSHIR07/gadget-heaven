@@ -1,19 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { getCart, setCart } from '../utilities/addtoCard';
 import ShowCart from '../components/ShowCart';
+import toast from 'react-hot-toast';
+
+import { CartContext } from '../Layouts/MainLayout';
+
 
 const Cart = () => {
-  const [cart, updateCart] = useState([]); // ✅ avoid conflict with utility function
+  const [cart, updateCart] = useState([]);
+
+  const [cartLength, setCartLength] = useContext(CartContext);
 
   useEffect(() => {
     const storedCart = getCart();
     updateCart(storedCart);
+    setCartLength(storedCart.length)
+    
   }, []);
 
   const handleRemove = (id) => {
     const updatedCart = cart.filter(item => item.product_id !== id);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
     updateCart(updatedCart);
+    setCartLength(updatedCart.length)
+    toast.success("Product Removed Successfully")
   };
 
   return (

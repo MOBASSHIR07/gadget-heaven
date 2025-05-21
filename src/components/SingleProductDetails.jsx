@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaStar, FaRegHeart } from 'react-icons/fa';
-import { setCart,setWishList } from '../utilities/addtoCard';
+import { setCart,setWishList,getCart } from '../utilities/addtoCard';
+import { CartContext } from '../Layouts/MainLayout';
+import { useContext } from 'react';
 
 const SingleProductDetails = ({ product }) => {
   const {
@@ -21,6 +23,15 @@ const SingleProductDetails = ({ product }) => {
     noise_cancellation,
     compatibility = [],
   } = product;
+
+   const[cartLength, setCartLength] = useContext(CartContext);
+
+  const handleSetcart = () => {
+  setCart(product);
+  const updatedCartLength = getCart().length; 
+  setCartLength(updatedCartLength);           
+};
+
 
   return (
     <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-md p-6 flex flex-col md:flex-row gap-6">
@@ -124,7 +135,7 @@ const SingleProductDetails = ({ product }) => {
         )}
 
         <div className="flex items-center gap-4 pt-3">
-          <button onClick={()=>{  setCart(product)}} className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg font-medium">
+          <button onClick={handleSetcart} className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg font-medium">
             Add To Cart
           </button>
          <button onClick={()=>{setWishList(product)}}> <FaRegHeart className="text-red-400 hover:text-red-500 hover:scale-125  cursor-pointer text-xl" /></button>

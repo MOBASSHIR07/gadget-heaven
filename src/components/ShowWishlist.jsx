@@ -1,8 +1,7 @@
 import React from 'react';
 import { FiX } from 'react-icons/fi';
 
-
-const ShowCart = ({ item, onRemove }) => {
+const ShowWishlist = ({ item, onRemove }) => {
   const { product_id, product_image, product_title, price } = item;
 
   return (
@@ -19,9 +18,6 @@ const ShowCart = ({ item, onRemove }) => {
       {/* Product Info */}
       <div className="flex-1">
         <h3 className="text-lg font-semibold text-gray-800">{product_title}</h3>
-        <p className="text-sm text-gray-600">
-          
-        </p>
         <p className="text-sm font-medium text-gray-900 mt-1">Price: ${price}</p>
       </div>
 
@@ -32,7 +28,7 @@ const ShowCart = ({ item, onRemove }) => {
           onRemove(product_id);
         }}
         className="absolute top-2 right-2 text-red-500 hover:text-red-700"
-        aria-label="Remove from cart"
+        aria-label="Remove from wishlist"
       >
         <FiX className="text-xl" />
       </button>
@@ -40,4 +36,4 @@ const ShowCart = ({ item, onRemove }) => {
   );
 };
 
-export default ShowCart;
+export default ShowWishlist;
