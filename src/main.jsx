@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.jsx';
 import Home from './Pages/Home.jsx';
+import { Toaster } from 'react-hot-toast';
 
 
 import {
@@ -11,6 +12,10 @@ import {
 } from "react-router-dom";
 import MainLayout from './Layouts/MainLayout.jsx';
 import AllProducts from './components/AllProducts.jsx';
+import DetailsMap from './components/DetailsMap.jsx';
+import Dashboard from './Pages/Dashboard.jsx';
+import Cart from './components/Cart.jsx';
+import Wishlist from './components/Wishlist.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +23,7 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        index: "/",
+        path: "/",
         element: <Home />,
         children: [
           {
@@ -27,12 +32,12 @@ const router = createBrowserRouter([
             element: <AllProducts />,
           },
           {
-            path: "category/allproducts",
+            path: "/category/allproducts",
             loader: () => fetch('/fakeData.json'),
             element: <AllProducts />,
           },
           {
-            path: "category/:categoryName",
+            path: "/category/:categoryName",
             loader: async ({ params }) => {
               const res = await fetch('/fakeData.json');
               const data = await res.json();
@@ -46,8 +51,44 @@ const router = createBrowserRouter([
         
 
         ],
+       
+
       },
 
+      {
+             path:'details/:id',
+        loader:async ({params})=>{
+          const res = await fetch('/fakeData.json');
+          const data = await res.json();
+          const filtered = data.filter(product =>
+            product.product_id === params.id
+          )
+          return filtered;
+
+        },
+        element:<DetailsMap />,
+      },
+
+      {
+
+        path:'dashboard',
+        element:<Dashboard></Dashboard>,
+        children:[
+         {
+          index:true,
+          element:<Cart></Cart>
+         },
+         {
+          path:'wishlist',
+          element:<Wishlist></Wishlist>
+         }
+
+
+        ]
+      }
+
+     
+ 
 
 
 
@@ -59,5 +100,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <Toaster/>
   </StrictMode>
 );

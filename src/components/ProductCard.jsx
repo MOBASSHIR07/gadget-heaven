@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
     const {
+        product_id,
         product_title,
         product_image,
         category,
@@ -27,9 +29,14 @@ const ProductCard = ({ product }) => {
                     <p className="text-yellow-500 text-sm">⭐ {rating}</p>
                 </div>
             </div>
-            <button className="border border-purple-500 text-purple-600 px-4 py-2 rounded mt-4 hover:bg-purple-100 transition duration-200">
+
+            {/* ✅ Link to details page */}
+            <Link
+                to={`/details/${product_id}`}
+                className="text-center border border-purple-500 text-purple-600 px-4 py-2 rounded mt-4 hover:bg-purple-100 transition duration-200"
+            >
                 View Details
-            </button>
+            </Link>
         </div>
     );
 };

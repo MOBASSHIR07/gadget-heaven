@@ -6,7 +6,7 @@ const AllProducts = () => {
     const lodeData = useLoaderData();
  if (!lodeData || lodeData.length === 0) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[50vh] text-gray-600">
+    <div className="flex flex-1 items-center justify-center min-h-[50vh] text-gray-600">
       <div className="bg-gray-100 p-8 rounded-xl shadow-md text-center">
         <h2 className="text-3xl font-semibold mb-2">No Products Found</h2>
         <p className="text-lg text-gray-500">Please check back later or explore other categories.</p>

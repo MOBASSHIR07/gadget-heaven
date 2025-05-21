@@ -4,6 +4,7 @@ import Nav from '../components/Nav';
 import HeroBanner from '../components/HeroBanner';
 import Footer from '../components/Footer';
 
+
 const MainLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
