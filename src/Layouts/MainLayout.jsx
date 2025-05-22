@@ -4,6 +4,8 @@ import Nav from '../components/Nav';
 import HeroBanner from '../components/HeroBanner';
 import Footer from '../components/Footer';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useMatch } from 'react-router-dom';//react-router v6 , alternative of useloaction
 
   export const CartContext = createContext();
   export const WishlistContext = createContext();
@@ -14,7 +16,8 @@ const MainLayout = () => {
   const [wishlistLength, setwishlistLength] = useState(0);
   
 
-
+const location = useLocation();
+const match = useMatch('/details/:id');//alternative
 
   return (
     <WishlistContext.Provider value={[wishlistLength, setwishlistLength]}>
@@ -26,17 +29,21 @@ const MainLayout = () => {
         
           <Nav />
         
-          <HeroBanner />
+        {location.pathname==='/'&&<HeroBanner></HeroBanner>}
         </div>
       
 {/* getting value from singleProductDetails when products are added to cart */}
    
-      <main className="flex-grow w-11/12 mx-auto pt-64 md:pt-72 mb-8"> 
-        <Outlet />
-      </main>
+      {/* Main Content with conditional top padding */}
+          <main
+            className={`flex-grow w-11/12 mx-auto ${
+              location.pathname === '/' ? 'pt-64 md:pt-72 ' : 'pt-1 '
+            } mb-8`}
+          >
+            <Outlet />
+          </main>
    
-
-   <footer className="w-full bg-gray-100">
+<footer className={`${match ? 'mt-96' : 'w-full bg-gray-100'}`}>
         <div className="">
           <Footer />
         </div>

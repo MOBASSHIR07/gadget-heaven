@@ -2,7 +2,7 @@ import React from 'react';
 import { FaStar, FaRegHeart } from 'react-icons/fa';
 import { setCart, setWishList, getCart, getWishList } from '../utilities/addtoCard';
 import { CartContext, WishlistContext } from '../Layouts/MainLayout';
-import { useContext,useState,useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { FaHeart } from 'react-icons/fa';
 
 
@@ -59,7 +59,20 @@ const SingleProductDetails = ({ product }) => {
 
 
   return (
-    <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-md p-6 flex flex-col md:flex-row gap-6">
+   <div className="relative bg-purple-700 text-white pt-20 pb-60 rounded-xl">
+  {/* Banner Content */}
+  <div className="max-w-4xl mx-auto px-4 text-center">
+    <h3 className="text-3xl md:text-4xl font-bold mb-4">
+      Discover the Power of Innovation
+    </h3>
+    <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+      Dive into the complete details of your favorite gadget. Get the insights you need before making the next big move.
+    </p>
+  </div>
+
+  {/* Floating Product Details */}
+  <div className="absolute left-1/2 right-1/2 md:-bottom-2  transform -translate-x-1/2 translate-y-1/2 w-[70%]  max-w-4xl">
+    <div className="bg-white rounded-lg shadow-md p-6 flex flex-col md:flex-row gap-6 text-gray-800">
       {/* Product Image */}
       <div className="w-full md:w-1/3">
         <img
@@ -72,16 +85,15 @@ const SingleProductDetails = ({ product }) => {
       {/* Product Info */}
       <div className="w-full md:w-2/3 space-y-4">
         <h2 className="text-2xl font-semibold">{product_title}</h2>
-
         <p className="text-green-600 font-semibold text-lg">Price: ${price}</p>
 
-        <span className={`px-3 py-1 rounded-full text-sm font-medium inline-block ${availability ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-          }`}>
+        <span className={`px-3 py-1 rounded-full text-sm font-medium inline-block ${availability ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
           {availability ? 'In Stock' : 'Out of Stock'}
         </span>
 
         <p className="text-gray-700">{description}</p>
 
+        {/* Specification */}
         {specification.length > 0 && (
           <div>
             <h3 className="font-semibold mb-1">Specification:</h3>
@@ -93,10 +105,10 @@ const SingleProductDetails = ({ product }) => {
           </div>
         )}
 
+        {/* Rating */}
         {rating > 0 && (
           <div className="flex items-center gap-2">
             <span className="font-semibold">Rating</span>
-            <FaStar className="text-yellow-400" />
             <div className="flex gap-1 text-yellow-500">
               {Array(Math.floor(rating)).fill().map((_, i) => (
                 <FaStar key={i} />
@@ -106,6 +118,7 @@ const SingleProductDetails = ({ product }) => {
           </div>
         )}
 
+        {/* Colors */}
         {colors.length > 0 && (
           <div className="flex gap-2 items-center">
             <span className="font-semibold">Available Colors:</span>
@@ -116,9 +129,9 @@ const SingleProductDetails = ({ product }) => {
         )}
 
         {brand && <p className="text-sm text-gray-500">Brand: {brand}</p>}
-
         {weight && <p className="text-sm text-gray-500">Weight: {weight}</p>}
 
+        {/* Ports */}
         {ports.length > 0 && (
           <div>
             <h3 className="font-semibold mb-1">Ports:</h3>
@@ -130,6 +143,7 @@ const SingleProductDetails = ({ product }) => {
           </div>
         )}
 
+        {/* Strap Options */}
         {strap_options.length > 0 && (
           <div>
             <h3 className="font-semibold mb-1">Strap Options:</h3>
@@ -141,12 +155,14 @@ const SingleProductDetails = ({ product }) => {
           </div>
         )}
 
+        {/* Noise Cancellation */}
         {noise_cancellation !== undefined && (
           <p className="text-sm text-gray-500">
             Noise Cancellation: {noise_cancellation ? 'Yes' : 'No'}
           </p>
         )}
 
+        {/* Compatibility */}
         {compatibility.length > 0 && (
           <div>
             <h3 className="font-semibold mb-1">Compatibility:</h3>
@@ -158,6 +174,7 @@ const SingleProductDetails = ({ product }) => {
           </div>
         )}
 
+        {/* Buttons */}
         <div className="flex items-center gap-4 pt-3">
           <button onClick={handleSetcart} className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg font-medium">
             Add To Cart
@@ -165,10 +182,7 @@ const SingleProductDetails = ({ product }) => {
           <button
             onClick={handleSetwishlist}
             disabled={wishlistDisabled}
-            className={`${wishlistDisabled
-                ? 'opacity-50 cursor-not-allowed'
-                : 'hover:scale-125 hover:text-red-500'
-              }`}
+            className={`${wishlistDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:scale-125 hover:text-red-500'}`}
           >
             {wishlistDisabled ? (
               <FaHeart className="text-red-500 text-xl" />
@@ -179,7 +193,11 @@ const SingleProductDetails = ({ product }) => {
         </div>
       </div>
     </div>
+  </div>
+</div>
+
   );
+
 };
 
 export default SingleProductDetails;
