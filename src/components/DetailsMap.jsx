@@ -1,17 +1,25 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import SingleProductDetails from './SingleProductDetails';
+import Loader from './Loader';
 
 const DetailsMap = () => {
+
+    const navigation = useNavigation();
+    if(navigation.state==='loading') return <Loader></Loader>
     const detailsData = useLoaderData();
-    console.log(detailsData);
+
+
+
+
     return (
         <div>
-
-            {
-                detailsData.map(product=><SingleProductDetails product={product} key={product.product_id}></SingleProductDetails>)
-            }
-            
+            {detailsData.map((product) => (
+                <SingleProductDetails
+                    product={product}
+                    key={product.product_id}
+                />
+            ))}
         </div>
     );
 };

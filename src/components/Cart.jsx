@@ -5,11 +5,12 @@ import toast from 'react-hot-toast';
 import { FaSort } from "react-icons/fa6";
 import { CartContext } from '../Layouts/MainLayout';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const [cart, updateCart] = useState([]);
   const [cartLength, setCartLength] = useContext(CartContext);
-  
+  const navigate = useNavigate();
   // Calculate total from cart - 
   const totalCost = cart.reduce((sum, item) => sum + Number(item.price), 0).toFixed(2);
 
@@ -23,7 +24,7 @@ const Cart = () => {
     const updatedCart = cart.filter(item => item.product_id !== id);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
     updateCart(updatedCart);
-    setCartLength(updatedCart.length);
+    setCartLength(getCart.length);
     toast.success("Product Removed Successfully");
   };
 
@@ -59,7 +60,10 @@ const Cart = () => {
           'success'
         );
       }
+    }).then(()=>{
+      navigate('/');
     });
+    
   };
 
   return (
