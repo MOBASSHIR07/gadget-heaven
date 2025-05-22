@@ -6,15 +6,18 @@ import Footer from '../components/Footer';
 import { useState } from 'react';
 
   export const CartContext = createContext();
+  export const WishlistContext = createContext();
 
 
 const MainLayout = () => {
   const [cartLength, setCartLength] = useState(0);
+  const [wishlistLength, setwishlistLength] = useState(0);
   
 
 
 
   return (
+    <WishlistContext.Provider value={[wishlistLength, setwishlistLength]}>
     <CartContext.Provider value={[cartLength, setCartLength ]}>
     <div className="min-h-screen flex flex-col">
       
@@ -41,6 +44,7 @@ const MainLayout = () => {
       
     </div>
     </CartContext.Provider>
+    </WishlistContext.Provider>
   );
 };
 

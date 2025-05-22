@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiX } from 'react-icons/fi';
 
 
-const ShowCart = ({ item, onRemove }) => {
-  const { product_id, product_image, product_title, price } = item;
+const ShowCart = ({ item, onRemove}) => {
+  const { product_id, product_image, product_title, price,description } = item;
+ 
+ 
+  
 
   return (
     <div className="relative flex items-center gap-4 bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-200">
@@ -20,7 +23,7 @@ const ShowCart = ({ item, onRemove }) => {
       <div className="flex-1">
         <h3 className="text-lg font-semibold text-gray-800">{product_title}</h3>
         <p className="text-sm text-gray-600">
-          
+          {description}
         </p>
         <p className="text-sm font-medium text-gray-900 mt-1">Price: ${price}</p>
       </div>

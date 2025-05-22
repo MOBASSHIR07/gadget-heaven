@@ -2,11 +2,13 @@ import React from 'react';
 import { FaShoppingCart, FaHeart } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
-import { CartContext } from '../Layouts/MainLayout';
+import { CartContext,WishlistContext } from '../Layouts/MainLayout';
 
 const Nav = () => {
 
   const [cartLength, setCartLength] = useContext(CartContext);
+    const [wishlistLength, setwishlistLength] = useContext(WishlistContext);
+  
 
   return (
     <div className="bg-purple-700 text-white rounded-t-2xl ">
@@ -66,10 +68,17 @@ const Nav = () => {
                 </span>
               )}
             </button>
-
-            <button className="bg-white text-black p-2 rounded-full hover:bg-gray-200 transition">
+            <button className="relative bg-white text-black p-2 rounded-full hover:bg-gray-200 transition">
               <FaHeart />
+
+              {wishlistLength > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {wishlistLength}
+                </span>
+              )}
             </button>
+
+           
           </div>
         </nav>
       </div>

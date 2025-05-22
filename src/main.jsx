@@ -16,6 +16,7 @@ import DetailsMap from './components/DetailsMap.jsx';
 import Dashboard from './Pages/Dashboard.jsx';
 import Cart from './components/Cart.jsx';
 import Wishlist from './components/Wishlist.jsx';
+import Statistic from './Pages/Statistic.jsx';
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,11 @@ const router = createBrowserRouter([
 
 
         ]
+      },
+      {
+        path:'statistics',
+        element:<Statistic></Statistic>
+
       }
 
      

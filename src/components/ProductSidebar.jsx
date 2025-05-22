@@ -70,7 +70,7 @@ const ProductSidebar = () => {
         {/* Smart Watches */}
         <MenuItem 
           icon={<FaClock />}
-          component={<NavLink to="category/smart-watches" />}
+          component={<NavLink to="category/Smart Watches" />}
         >
           Smart Watches
         </MenuItem>

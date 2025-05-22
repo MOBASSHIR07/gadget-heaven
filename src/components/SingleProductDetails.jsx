@@ -1,8 +1,12 @@
 import React from 'react';
 import { FaStar, FaRegHeart } from 'react-icons/fa';
-import { setCart,setWishList,getCart } from '../utilities/addtoCard';
-import { CartContext } from '../Layouts/MainLayout';
-import { useContext } from 'react';
+import { setCart, setWishList, getCart, getWishList } from '../utilities/addtoCard';
+import { CartContext, WishlistContext } from '../Layouts/MainLayout';
+import { useContext,useState,useEffect } from 'react';
+import { FaHeart } from 'react-icons/fa';
+
+
+
 
 const SingleProductDetails = ({ product }) => {
   const {
@@ -24,13 +28,34 @@ const SingleProductDetails = ({ product }) => {
     compatibility = [],
   } = product;
 
-   const[cartLength, setCartLength] = useContext(CartContext);
+
+  const [wishlistDisabled, setWishlistDisabled] = useState(false)
+
+  const [cartLength, setCartLength] = useContext(CartContext);
+  const [wishlistLength, setwishlistLength] = useContext(WishlistContext);
+
+  useEffect(() => {
+    const existingWishlist = getWishList();
+    const alreadyInWishlist = existingWishlist.some(item => item.product_id === product.product_id);
+    if (alreadyInWishlist) {
+      setWishlistDisabled(true);
+    }
+  }, []);
 
   const handleSetcart = () => {
-  setCart(product);
-  const updatedCartLength = getCart().length; 
-  setCartLength(updatedCartLength);           
-};
+    setCart(product);
+    const updatedCartLength = getCart().length;
+    setCartLength(updatedCartLength);
+  };
+
+  const handleSetwishlist = () => {
+    setWishList(product);
+    const updatedWishlistLength = getWishList().length;
+    setwishlistLength(updatedWishlistLength);
+    setWishlistDisabled(true);
+
+
+  }
 
 
   return (
@@ -50,9 +75,8 @@ const SingleProductDetails = ({ product }) => {
 
         <p className="text-green-600 font-semibold text-lg">Price: ${price}</p>
 
-        <span className={`px-3 py-1 rounded-full text-sm font-medium inline-block ${
-          availability ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-        }`}>
+        <span className={`px-3 py-1 rounded-full text-sm font-medium inline-block ${availability ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+          }`}>
           {availability ? 'In Stock' : 'Out of Stock'}
         </span>
 
@@ -138,7 +162,20 @@ const SingleProductDetails = ({ product }) => {
           <button onClick={handleSetcart} className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg font-medium">
             Add To Cart
           </button>
-         <button onClick={()=>{setWishList(product)}}> <FaRegHeart className="text-red-400 hover:text-red-500 hover:scale-125  cursor-pointer text-xl" /></button>
+          <button
+            onClick={handleSetwishlist}
+            disabled={wishlistDisabled}
+            className={`${wishlistDisabled
+                ? 'opacity-50 cursor-not-allowed'
+                : 'hover:scale-125 hover:text-red-500'
+              }`}
+          >
+            {wishlistDisabled ? (
+              <FaHeart className="text-red-500 text-xl" />
+            ) : (
+              <FaRegHeart className="text-red-400 text-xl" />
+            )}
+          </button>
         </div>
       </div>
     </div>
