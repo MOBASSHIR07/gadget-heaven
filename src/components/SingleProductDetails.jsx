@@ -60,7 +60,7 @@ const SingleProductDetails = ({ product }) => {
 
 
   return (
-    <div className="relative bg-purple-700 text-white pt-20 pb-60 rounded-xl">
+    <div className="md:relative bg-purple-700 text-white pt-20 pb-5 md:pb-60 rounded-xl">
       {/* Banner Content */}
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h3 className="text-3xl md:text-4xl font-bold mb-4">
@@ -71,8 +71,8 @@ const SingleProductDetails = ({ product }) => {
         </p>
       </div>
 
-      {/* Floating Product Details */}
-      <div className="absolute left-1/2 right-1/2 md:-bottom-2 transform -translate-x-1/2 translate-y-2/3 w-[70%] max-w-4xl">
+     <div className="relative md:absolute md:left-1/2 md:-bottom-2 transform md:-translate-x-1/2 md:translate-y-2/3 w-[90%] max-w-4xl mx-auto">
+
 
         <div className="bg-white rounded-lg shadow-md p-6 flex flex-col md:flex-row gap-6 text-gray-800">
           {/* Product Image */}

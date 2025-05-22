@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+
 import { useLoaderData } from 'react-router-dom';
 import ProductCard from './ProductCard';
 

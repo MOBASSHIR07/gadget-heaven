@@ -1,6 +1,6 @@
 import React from 'react';
 import img from '../assets/banner.jpg';
-import { useRef } from 'react';
+
 
 const HeroBanner = () => {
 

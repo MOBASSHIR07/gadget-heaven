@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import SingleProductDetails from './SingleProductDetails';
 import Loader from './Loader';

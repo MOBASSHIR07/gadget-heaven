@@ -36,7 +36,7 @@ const MainLayout = () => {
           </main>
 
           {/* Footer with conditional spacing */}
-          <footer className={`${match ? 'mt-[300px] sm:mt-[350px]' : 'w-full bg-gray-100'}`}>
+          <footer className={`${match ? 'mt-[300px] sm:mt-[360px]' : 'w-full bg-gray-100'}`}>
             <div className="">
               <Footer />
             </div>
